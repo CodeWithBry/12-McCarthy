@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.sideBarWrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 3.5rem;
+    background-color: #9B51F6;
+    color: white;
+    overflow: hidden;
+    border-radius: 0 2rem 0 0;
+    transition: all .3s ease-out;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    z-index: 1;
+}
+
+.showSidebar {
+    width: 13rem;
+}
+
+
+.sideBarWrapper .linkWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    gap: 1rem;
+}
+
+/* 
+<button className={s.hideButton}>
+          <i className={`fa fa-chevron-left`}></i>
+          <p>Hide</p>
+        </button> */
+
+.linkWrapper .simplifySidebarWrapper {
+    height: 4rem;
+    position: relative;
+}
+
+.linkWrapper .simplifySidebarWrapper .simplifySidebar {
+    font-family: "Inter", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: transparent;
+    margin-top: .6rem;
+    transition: all .15s ease-out;
+
+}
+
+.linkWrapper .simplifySidebarWrapper .simplifySidebar:hover {
+    background-color: #ffffff2c;
+    color: rgb(6, 57, 151);
+}
+
+.linkWrapper .simplifySidebarWrapper .simplifySidebar>i {
+    margin: 1.1rem;
+    font-size: 1.8rem;
+}
+
+.linkWrapper .link {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    transition: all .3s ease-out;
+    list-style: none;
+}
+
+.linkWrapper .link:hover {
+    background-color: #ffffff2c;
+    color: cornflowerblue;
+}
+
+.linkWrapper .active {
+    color: #f5b11f;
+}
+
+.linkWrapper .active:hover {
+    color: #f5b11f;
+    filter: brightness(.8);
+}
+
+.linkWrapper .link>i {
+    margin: 1rem;
+    font-size: 1.6rem;
+}
+
+.linkWrapper .link .line {
+    position: absolute;
+    bottom: 0;
+    left: 13%;
+    width: 70%;
+    transition: all 1s ease;
+    border-top: .2rem solid white;
+    height: 0;
+}
+
+.linkWrapper .active .line {
+    border-color: #f5b11f;
+}
+
+.showSidebar .linkWrapper .line {
+    width: 90%;
+    left: 4%;
+}
+
+.linkWrapper .link:hover .line {
+    border-color: cornflowerblue;
+}
+
+.linkWrapper .active:hover .line {
+    border-color: #f5b11f;
+}
+
+@media (max-width: 600px) and (max-height: 800px) {
+    .sideBarWrapper {
+        flex-direction: row;
+        width: 100%;
+        height: fit-content;
+        position: fixed;
+        bottom: 0;
+        border-radius: 0;
+    }
+
+    .sideBarWrapper .linkWrapper .simplifySidebarWrapper {
+        display: none;
+    }
+
+    .sideBarWrapper .linkWrapper {
+        flex-direction: row;
+        gap: 0;
+    }
+
+    .sideBarWrapper .linkWrapper li {
+        width: 25%;
+        justify-content: center;
+    }
+
+    .linkWrapper .link .line {
+        display: none;
+    }
+
+    .linkWrapper .link > p {
+        display: none;
+    }
+}

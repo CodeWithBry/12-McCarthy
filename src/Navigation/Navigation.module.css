@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap');
+
+.nav {
+    display: flex;
+    align-items: center;
+    font-family: "Laila", serif;
+    background-color: white;
+    box-shadow: 0 5px 5px -1px rgba(107, 105, 105, 0.438);
+    width: 100vw;
+    height: 4rem;
+}
+
+.nav .left {
+    margin-left: clamp(1rem, 2vw, 2rem);
+    margin-right: 2rem;
+    color: #9B51F6;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav .left>img {
+    width: 3rem;
+    border-radius: 50%;
+}
+
+.nav .left>h1 {
+    text-wrap: nowrap;
+    font-size: clamp(1rem, 2vw, 2rem);
+}
+
+.nav .right {
+    width: 100%;
+}
+
+.nav .right .searchWrapper {
+    border-radius: 1rem;
+    background-color: #D9D9D9;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: fit-content;
+    height: 2.5rem;
+    margin-left: auto;
+}
+
+.nav .right .searchWrapper>* {
+    padding: clamp(2px, 2vw, .75rem) clamp(.5rem, 2vw, 1rem);
+    align-items: center;
+}
+
+.nav .right .searchWrapper #searchBar {
+    border: none;
+    background-color: transparent;
+    padding-left: 0;
+    outline: none;
+    width: 20rem;
+    font-family: "Laila", serif;
+}
+
+.nav .right .searchWrapper .searchButton {
+    border: none;
+    padding: .7rem 1rem;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    background-color: #9B51F6;
+    color: white;
+
+}
+
+.nav .right {
+    display: flex;
+    align-items: center;
+    margin-right: 1.5rem;
+    gap: 1rem;
+}
+
+.nav .right>button {
+    padding: clamp(2px, 2vw, .75rem) clamp(.5rem, 2vw, 1rem);
+    width: fit-content;
+    display: grid;
+    place-items: center;
+    font-family: "Inter", sans-serif;
+    font-weight: bolder;
+    border-radius: 1rem;
+    border: none;
+    transition: all .15s ease-out;
+    color: white;
+    cursor: pointer;
+    text-wrap: nowrAP;
+}
+
+.nav .right>button:nth-child(2) {
+    background-color: #9B51F6;
+}
+
+.nav .right>button:nth-child(2):hover {
+    background-color: #D9D9D9;
+    color: #9B51F6;
+}
+
+.nav .right>button:nth-child(3) {
+    background-color: #f5b11f;
+}
+
+.nav .right>button:nth-child(3):hover {
+    color: #f5b11f;
+    background-color: #D9D9D9;
+}
+
+.nav .right #bell {
+    font-size: clamp(.75rem, 2vw, 1rem);
+    width: fit-content;
+    padding: clamp(2px, 2vw, .75rem) clamp(.5rem, 2vw, 1rem);
+    position: relative;
+}
+
+.nav .right #bell #notifIcon {
+    position: absolute;
+    top: -.2rem;
+    right: -.2rem;
+    font-size: .5rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: red;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 1000px) {
+
+    .nav .right {
+        display: flex;
+        margin-right: 3rem;
+        gap: .75rem;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+    .nav {
+        height: 3rem;
+    }
+
+    .nav .left {
+        gap: .2rem;
+    }
+
+    .nav .left>img {
+        width: 2rem;
+    }
+
+    .nav .left>h1 {
+        font-size: clamp(.5rem, 2vw, 1rem);
+
+    }
+
+    .nav .right {
+        gap: .2rem;
+        margin-right: clamp(1rem, 2vw, 2rem);
+    }
+
+    .nav .right .searchWrapper {
+        margin-right: 0;
+        margin-left: auto;
+    }
+
+    .nav .right .searchWrapper #searchBar,
+    .nav .right .searchWrapper .searchButton {
+        display: none;
+    }
+
+    .nav .right .searchWrapper {
+        height: fit-content;
+    }
+
+    .nav .right .searchWrapper>* {
+        padding: clamp(2px, 2vw, .5rem) clamp(.5rem, 2vw, 1rem);
+        font-size: clamp(.75rem, 2vw, 1rem);
+    }
+
+    .nav .right>button, .nav .right #bell{
+        padding: clamp(2px, 2vw, .5rem) clamp(4px, 2vw, .75rem);
+    }
+
+}
+
+@media (max-width: 600px) {
+    .nav .right .searchWrapper>* {
+        font-size: clamp(.3rem, 2vw, .5rem);
+    }
+
+    .nav .right>button,
+    .nav .right #bell {
+        font-size: clamp(.3rem, 2vw, .5rem);
+    }
+
+    .nav .right #bell #notifIcon {
+        width: 1rem;
+        height: 1rem;
+        font-size: 7px;
+        right: -5px;
+        top: -5px;
+    }
+}
+
+@media (max-width: 300px) {
+    .nav .right .searchWrapper>* {
+        font-size: clamp(.3rem, 2vw, .5rem);
+    }
+
+    .nav .right>button,
+    .nav .right #bell {
+        font-size: clamp(.3rem, 2vw, .5rem);
+    }
+
+    .nav .right #bell #notifIcon {
+        width: 7px;
+        height: 7px;
+        font-size: 3px;
+        right: 0;
+        top: 0;
+    }
+}

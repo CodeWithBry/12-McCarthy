@@ -1,0 +1,33 @@
+.homeWrapper * {
+    &::-webkit-scrollbar {
+        height: 5px;
+        width: 5px; /* Scrollbar width */
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #888; /* Thumb color */
+        border-radius: 5px; /* Rounded corners */
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: #eee; /* Track color */
+        border-radius: 5px;
+    }
+}
+
+.homeWrapper {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+
+@media (max-width: 400px) and (max-height: 800px) {
+    .homeWrapper {
+        width: 100%;
+    }
+}

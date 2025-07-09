@@ -2,16 +2,14 @@ import { useEffect, useRef, useState } from "react"
 import s from "./Home.module.css"
 import CurrentTasks from "./CurrentTasks/CurrentTasks"
 import SubjectsShortcut from "./SubjectsShortcut/SubjectsShortcut"
+import subjectsJson from "../../../public/Subjects/subjects.json"
 
 
 const Home = () => {
-  const currentWrapper = useRef()
-
-
   // Objects
 
   // Arrays
-  const [subjects, setSubjects] = useState([])
+  const [subjects, setSubjects] = useState(subjectsJson.subjects)
 
   const [activities, setActivities] = useState([
     {
@@ -47,19 +45,6 @@ const Home = () => {
     }
   ])
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const fetchedData = await fetch("/Subjects/subjects.json")
-        fetchedData.json().then(res => setSubjects([...res.subjects]))
-      } catch (error) {
-        console.log(error)
-        fetchData()
-      }
-    }
-
-    if (subjects.length == 0) fetchData()
-  }, [])
 
   return (
     <>
